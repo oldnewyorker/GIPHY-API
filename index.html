@@ -13,7 +13,7 @@
     </head>
 <body>
 
-<body background="http://forrestkyle.com/wp-content/uploads/2017/03/Space-Background-40-HD-4K-Tumblr.jpg">
+<body background="https://forrestkyle.com/wp-content/uploads/2017/03/Space-Background-40-HD-4K-Tumblr.jpg">
 
 <h4 class="text-center" style="color: lime">Please click on a button to display 10 giphs and their rating, or add your own button with any search term you choose.</p><p>If there are less than 10 results for it, I will let you know.  Click on the picture to start/stop the animation.  Have fun!</h4>
 
@@ -81,6 +81,7 @@ $("#addSpaceThing").on("click", function(event) {
             showButtons(); }
         else if (response.pagination.total_count === 0) {
             $("#entry").html(" Sorry, there were no results for this.  Please try again."); }
+        else if (response.pagination.total_count === 1) { $("#entry").html(" Sorry, there was only 1 result for this.  Please try again."); }
         else { $("#entry").html(" Sorry, there were only " + response.pagination.total_count + " results for this.  Please try again."); }
         $("#space-input").val("");
         });
@@ -108,7 +109,7 @@ function display() {
             var active = response.data[j].images.fixed_width.url;
             // Gets the still gif URL
             var still = response.data[j].images.fixed_width_still.url;
-            var rating = (response.data[j].rating).toUpperCase();
+            var rating = "Rating: " + (response.data[j].rating).toUpperCase();
 
             // Creates the new img item
             var spaceImage = $("<img>");
