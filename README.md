@@ -13,4 +13,4 @@ Have fun!
 To view this app:
 https://stuartschafer.github.io/GIPHY-API/
 
-![](assets/images/rpggame.gif)
+![](giphy.gif)
